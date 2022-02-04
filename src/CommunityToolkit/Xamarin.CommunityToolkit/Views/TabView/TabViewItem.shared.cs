@@ -8,7 +8,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 {
 	[Preserve(AllMembers = true)]
 	[ContentProperty(nameof(Content))]
-	public class TabViewItem : TemplatedView
+	public class TabViewItem : ContentView
 	{
 		public const string SelectedVisualState = "Selected";
 		public const string UnselectedVisualState = "Unselected";
@@ -100,15 +100,6 @@ namespace Xamarin.CommunityToolkit.UI.Views
 		{
 			get => (FontAttributes)GetValue(FontAttributesSelectedProperty);
 			set => SetValue(FontAttributesSelectedProperty, value);
-		}
-
-		public static readonly BindableProperty ContentProperty =
-			BindableProperty.Create(nameof(Content), typeof(View), typeof(TabViewItem));
-
-		public View? Content
-		{
-			get => (View?)GetValue(ContentProperty);
-			set => SetValue(ContentProperty, value);
 		}
 
 		public static readonly BindableProperty IconProperty =
